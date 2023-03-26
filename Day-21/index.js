@@ -11,13 +11,17 @@ const unionOfArrays = (arr1, arr2) => {
 //   return Array.from(set);
 
      ///////// or /////////
-    const result = [...arr1];
-    arr2.forEach((item) => {
-    if (!result.includes(item)) {
-      result.push(item);
-    }
-  });
-  return result;
+//     const result = [...arr1];
+//     arr2.forEach((item) => {
+//     if (!result.includes(item)) {
+//       result.push(item);
+//     }
+//   });
+//   return result;
+  
+  /////////////// or      
+  
+  return [...new Set([...arr1, ...arr2])];
 };
 
 console.log(`The union is ${unionOfArrays([1, 2, 34, 45, 3], [3, 24, 21])}`);
